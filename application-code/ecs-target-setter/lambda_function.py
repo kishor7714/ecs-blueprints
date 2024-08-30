@@ -20,8 +20,8 @@ config=Config(
 
 # Define session and resources
 session=boto3.Session()
-cloudwatch=session.client('cloudwatch', config=config, region_name='us-west-2')
-appautoscaling=boto3.client('application-autoscaling', config=config, region_name='us-west-2')
+cloudwatch=session.client('cloudwatch', config=config, region_name='ap-south-1')
+appautoscaling=boto3.client('application-autoscaling', config=config, region_name='ap-south-1')
 
 # Read environment variables
 ecs_sqs_app_scaling_policy_name=os.environ['scaling_policy_name']

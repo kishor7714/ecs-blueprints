@@ -24,7 +24,7 @@ config = Config(
 
 # Define session and resources
 session = boto3.Session()
-sqs = session.resource('sqs', config=config, region_name='us-west-2')
+sqs = session.resource('sqs', config=config, region_name='ap-south-1')
 cloudwatch = session.client('cloudwatch', config=config)
 
 queue_name = os.environ['queue_name']

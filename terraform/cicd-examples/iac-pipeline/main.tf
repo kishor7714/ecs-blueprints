@@ -2,7 +2,7 @@
 # terraform apply -var="s3_bucket=$STATE_BUCKET"
 
 provider "aws" {
-  region = "us-west-2"
+  region = "ap-south-1"
 }
 
 data "aws_s3_bucket" "example" {

@@ -41,10 +41,10 @@ Once the cluster is deployed, you can connect to the EC2 instance running the he
 ```bash
 HEAD_INSTANCE_ID=$(aws ec2 describe-instances \
   --filters 'Name=tag:Name,Values=ecs-demo-distributed-ml-training-head' 'Name=instance-state-name,Values=running' \
-  --query 'Reservations[*].Instances[0].InstanceId' --output text --region us-west-2
+  --query 'Reservations[*].Instances[0].InstanceId' --output text --region ap-south-1
 )
 
-aws ssm start-session --target $HEAD_INSTANCE_ID --region us-west-2
+aws ssm start-session --target $HEAD_INSTANCE_ID --region ap-south-1
 ```
 
 2. Connect to the container

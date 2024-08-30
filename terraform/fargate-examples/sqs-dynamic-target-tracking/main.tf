@@ -1,12 +1,12 @@
 provider "aws" {
-  region = "us-west-2"
+  region = "ap-south-1"
 }
 
 data "aws_caller_identity" "current" {}
 
 locals {
   name   = "ecsdemo-queue"
-  region = "us-west-2"
+  region = "ap-south-1"
 
   container_name = "ecsdemo-queue"
 

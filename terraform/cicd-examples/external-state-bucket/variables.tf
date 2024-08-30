@@ -1,5 +1,5 @@
 variable "region" {
   type        = string
-  default     = "us-west-2"
+  default     = "ap-south-1"
   description = "AWS region you want to deploy to."
 }

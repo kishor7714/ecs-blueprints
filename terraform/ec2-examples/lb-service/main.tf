@@ -4,7 +4,7 @@ provider "aws" {
 
 locals {
   name   = "ecsdemo-frontend"
-  region = "us-west-2"
+  region = "ap-south-1"
 
   container_port = 3000 # Container port is specific to this app example
   container_name = "ecsdemo-frontend"

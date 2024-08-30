@@ -1,10 +1,10 @@
 # STATE_BUCKET=$(aws ssm get-parameters --names terraform_state_bucket | jq -r '.Parameters[0].Value')
 
-# terraform init -backend-config="bucket=$STATE_BUCKET" -backend-config="key=lb-service-dev.tfstate" -backend-config="region=us-west-2"
+# terraform init -backend-config="bucket=$STATE_BUCKET" -backend-config="key=lb-service-dev.tfstate" -backend-config="region=ap-south-1"
 # terraform apply -var-file=../dev.tfvars
 # terraform destroy -var-file=../dev.tfvars
 
-# terraform init -backend-config="bucket=$STATE_BUCKET" -backend-config="key=lb-service-qa.tfstate" -backend-config="region=us-west-2"
+# terraform init -backend-config="bucket=$STATE_BUCKET" -backend-config="key=lb-service-qa.tfstate" -backend-config="region=ap-south-1"
 # terraform apply -var-file=../qa.tfvars
 # terraform destroy -var-file=../qa.tfvars
 

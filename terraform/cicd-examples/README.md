@@ -10,7 +10,7 @@ State for the terraform is stored external in a S3 bucket.
 
 It containers two CodePipeline examples one which will deploy the infrastructure as code (IAC) and another which will deliver new containers to the deployed infrastructure. Often the application teams are not the teams responsible for the deployment in infrastructure. These two pipelines simulate that separation of duty.
 
-By default these examples will deploy in us-west-2.
+By default these examples will deploy in ap-south-1.
 
 ## Prerequisites
 
@@ -44,7 +44,7 @@ Before deploying this example, ensure you have the following:
 3. Set local environment variable to reference deployed state bucket.
 
     ```
-    STATE_BUCKET=$(aws ssm get-parameters --names terraform_state_bucket --region us-west-2 | jq -r '.Parameters[0].Value')
+    STATE_BUCKET=$(aws ssm get-parameters --names terraform_state_bucket --region ap-south-1 | jq -r '.Parameters[0].Value')
     ```
 
 4. Deploy the CodePipeline which will deploy the required infrastructure.
@@ -58,7 +58,7 @@ Before deploying this example, ensure you have the following:
 
     ```
     #Get IAC code commit repo
-    YOUR_CODE_COMMIT_IAC_REPO=$(aws codecommit get-repository --repository-name iac_sample_repo --query 'repositoryMetadata.cloneUrlHttp' --region us-west-2 | jq -r .)
+    YOUR_CODE_COMMIT_IAC_REPO=$(aws codecommit get-repository --repository-name iac_sample_repo --query 'repositoryMetadata.cloneUrlHttp' --region ap-south-1 | jq -r .)
 
     #CD to terraform folder
     cd ../../../terraform
@@ -84,7 +84,7 @@ Before deploying this example, ensure you have the following:
     cd ../../../application-code/ecsdemo-cicd/
 
     #Get Application code commit repo
-    YOUR_CODE_COMMIT_APP_REPO=$(aws codecommit get-repository --repository-name ecs_service_repo --query 'repositoryMetadata.cloneUrlHttp' --region us-west-2 | jq -r .)
+    YOUR_CODE_COMMIT_APP_REPO=$(aws codecommit get-repository --repository-name ecs_service_repo --query 'repositoryMetadata.cloneUrlHttp' --region ap-south-1 | jq -r .)
 
     git init
     git add .
@@ -111,13 +111,13 @@ terraform destroy -var="s3_bucket=$STATE_BUCKET"
 
 ```
 cd ../lb-service-external-state
-terraform init -backend-config="bucket=$STATE_BUCKET" -backend-config="key=lb-service-dev.tfstate" -backend-config="region=us-west-2" -reconfigure
+terraform init -backend-config="bucket=$STATE_BUCKET" -backend-config="key=lb-service-dev.tfstate" -backend-config="region=ap-south-1" -reconfigure
 terraform destroy -var-file=../dev.tfvars
 ```
 
 ```
 cd ../core-infra-external-state
-terraform init -backend-config="bucket=$STATE_BUCKET" -backend-config="key=core-infra-dev.tfstate" -backend-config="region=us-west-2" -reconfigure
+terraform init -backend-config="bucket=$STATE_BUCKET" -backend-config="key=core-infra-dev.tfstate" -backend-config="region=ap-south-1" -reconfigure
 terraform destroy -var-file=../dev.tfvars
 ```
 

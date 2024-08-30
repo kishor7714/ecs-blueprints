@@ -17,7 +17,7 @@ phases:
   post_build:
     commands:
       - echo Building Task Definition
-      - python3 create-configs.py $REPO_URL:$IMAGE_TAG core-infra-external-state ecsdemo-frontend development us-west-2
+      - python3 create-configs.py $REPO_URL:$IMAGE_TAG core-infra-external-state ecsdemo-frontend development ap-south-1
       - echo Pushing the Docker image...
       - docker tag $REPO_URL $REPO_URL:$IMAGE_TAG
       - docker push $REPO_URL:$IMAGE_TAG

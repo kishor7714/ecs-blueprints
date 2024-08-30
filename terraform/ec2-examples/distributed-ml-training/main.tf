@@ -6,7 +6,7 @@ data "aws_caller_identity" "current" {}
 
 locals {
   name                       = "ecs-demo-distributed-ml-training"
-  region                     = "us-west-2"
+  region                     = "ap-south-1"
   instance_type_workers      = "g5.xlarge"
   instance_type_head         = "m5.xlarge"
   ray_head_container_image   = "docker.io/rayproject/ray-ml:2.7.1.artur.c9f4c6-py38"

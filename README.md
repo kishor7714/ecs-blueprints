@@ -37,7 +37,7 @@ export AWS_PROFILE=your_profile_name
 ```shell
 [default]
 output = json
-region = us-west-2
+region = ap-south-1
 ```
 
 ## Quick Start for ECS Blueprints for Terraform

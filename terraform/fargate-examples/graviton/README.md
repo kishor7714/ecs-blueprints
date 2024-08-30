@@ -45,6 +45,6 @@ The solution has following key components:
   <img src="../../../docs/multi-arch-ecr.png"/>
 </p>
 
-* Two ECS services are created one with x86 Fargate tasks (nodejs-multi-arch) and the other with arm64 Fargate tasks (nodejs-multi-arch-arm). You can check the task definition that each of them have the same image `"image": "xxx.dkr.ecr.us-west-2.amazonaws.com/nodejs-multi-arch:14f28fe"` **without the architecture suffix**. The ECS agent running in Fargate task will leverage the manifest to fetch the right image!
+* Two ECS services are created one with x86 Fargate tasks (nodejs-multi-arch) and the other with arm64 Fargate tasks (nodejs-multi-arch-arm). You can check the task definition that each of them have the same image `"image": "xxx.dkr.ecr.ap-south-1.amazonaws.com/nodejs-multi-arch:14f28fe"` **without the architecture suffix**. The ECS agent running in Fargate task will leverage the manifest to fetch the right image!
 
 Note that the CodeBuild and CodePipeline services are provisioned and configured here. However, they primarily interact with the [application-code/nodejs-demoapp/](../../../application-code/nodejs-demoapp/) repository. CodePipeline is listening for changes and checkins to that repository. And CodeBuild is using the *Dockerfile* and *templates/* files from that application folder.

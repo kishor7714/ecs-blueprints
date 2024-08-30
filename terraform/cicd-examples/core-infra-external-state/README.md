@@ -73,7 +73,7 @@ terraform destroy
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_environment"></a> [environment](#input\_environment) | What environment this is associate with. | `string` | `"development"` | no |
-| <a name="input_region"></a> [region](#input\_region) | AWS region you want to deploy to. | `string` | `"us-west-2"` | no |
+| <a name="input_region"></a> [region](#input\_region) | AWS region you want to deploy to. | `string` | `"ap-south-1"` | no |
 
 ## Outputs
 

@@ -1,7 +1,7 @@
 # Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved. SPDX-License-Identifier: MIT-0
 
 #Example Command
-# python3 create-configs.py public.ecr.aws/docker/library/httpd:latest core-infra ecsdemo-frontend development us-west-2
+# python3 create-configs.py public.ecr.aws/docker/library/httpd:latest core-infra ecsdemo-frontend development ap-south-1
 
 import boto3
 import json

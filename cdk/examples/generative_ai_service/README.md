@@ -4,11 +4,11 @@ This sample is developed using [AWS Blog - Deploy generative AI models from Amaz
 
 This blueprint creates Generative AI serving ECS service with [Amazon SageMaker JumpStart](https://docs.aws.amazon.com/sagemaker/latest/dg/studio-jumpstart.html). Below are the steps for deploying this service. This blueprint requires [Docker command line](https://docs.docker.com/engine/reference/commandline/cli/) for building ECS service container image locally.
 
-* Copy `sample.env` to `.env` and change the `account_number`, `aws_region`(example, us-west-2) values in the Essential Props of the `.env` file:
+* Copy `sample.env` to `.env` and change the `account_number`, `aws_region`(example, ap-south-1) values in the Essential Props of the `.env` file:
 ```bash
 # Essential Props
 export AWS_ACCOUNT=$(aws sts get-caller-identity --query 'Account' --output text)
-export AWS_REGION=${AWS_REGION:=us-west-2}
+export AWS_REGION=${AWS_REGION:=ap-south-1}
 
 aws configure set default.region ${AWS_REGION}
 

@@ -71,7 +71,7 @@ Make file variables and default values, pass these in when calling `make`, e.g. 
 | IMAGE_REPO        | nodejs-demoapp         |
 | IMAGE_TAG         | latest                 |
 | AWS_STACK_NAME    | demoapps               |
-| AWS_REGION        | us-west-2              |
+| AWS_REGION        | ap-south-1              |
 
 Web app will be listening on the standard Express port of 3000, but this can be changed by setting the `PORT` environmental variable.
 
